@@ -3,16 +3,20 @@ function main() {
     let buttonColors = ["red", "blue", "green", "yellow"];
     let gamePattern = [];
     let userClickedPattern = [];
+    let level = 0;
 
-    let randomNumber = nextSequence();
-    let randomChosenColor = buttonColors[randomNumber];
-    gamePattern.push(randomChosenColor);
+    $('body').keypress(function(event) {
+        let randomNumber = nextSequence();
+        randomChosenColor = buttonColors[randomNumber];
+        console.log(randomChosenColor)
+        playSound(randomChosenColor)
+        gamePattern.push(randomChosenColor);
 
-
-    $(`#${randomChosenColor}`).css('filter', 'brightness(2.5)');
-    setTimeout(function() {
-        $(`#${randomChosenColor}`).css('filter', 'brightness(1)');
-    }, 500);
+        $(`#${randomChosenColor}`).css('filter', 'brightness(2.5)');
+        setTimeout(function() {
+            $(`#${randomChosenColor}`).css('filter', 'brightness(1)');
+        }, 500);
+    })
 
     $('img').click(function() {
         let userChosenColor = this.id;
@@ -37,10 +41,6 @@ function playSound(name) {
     audio.play();
 }
 
-
-function animatePress(currentColor) {   
-
-}
 
 
 main();
