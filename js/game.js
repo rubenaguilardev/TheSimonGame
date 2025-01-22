@@ -6,7 +6,10 @@ function main() {
     let randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor)
 
-    $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100);
+    $(`#${randomChosenColor}`).css('filter', 'brightness(1.8)');
+    setTimeout(function() {
+        $(`#${randomChosenColor}`).css('filter', 'brightness(1)');
+    }, 500);
 }
 
 
