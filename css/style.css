@@ -1,11 +1,18 @@
 body {
-    background-color: skyblue;
+    background-color: black;
 }
 
 main {
     text-align: center;
+    background-image: url(../img/logo.png);
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    color: aliceblue;
+    margin: 80px 0 100px 0;
 }
