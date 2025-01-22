@@ -16,7 +16,7 @@ function main() {
 
     $('img').click(function() {
         let userChosenColor = this.id;
-        console.log(userChosenColor)
+        $(`#${userChosenColor}`).fadeOut(100).fadeIn(100);
         playSound(userChosenColor);
         userClickedPattern.push(userChosenColor);
        
@@ -34,8 +34,12 @@ function nextSequence() {
 
 function playSound(name) {
     let audio = new Audio(`sounds/${name}.mp3`);
-    console.log(audio)
     audio.play();
+}
+
+
+function animatePress(currentColor) {   
+
 }
 
 
